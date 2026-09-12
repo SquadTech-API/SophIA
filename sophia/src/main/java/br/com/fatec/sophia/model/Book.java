@@ -32,7 +32,7 @@ public class Book {
     @Column(precision = 3, scale = 2)
     private BigDecimal rating;
 
-    @Column(name = "embedding", columnDefinition = "vector")
+    @Column(name = "embedding", columnDefinition = "vector", insertable = false, updatable = false)
     private String embedding;
 
 	@ManyToMany
