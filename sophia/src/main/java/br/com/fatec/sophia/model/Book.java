@@ -1,5 +1,6 @@
 package br.com.fatec.sophia.model;
 
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -29,7 +30,7 @@ public class Book {
     private Integer yearPublished;
 
     @Column(precision = 3, scale = 2)
-    private Double rating;
+    private BigDecimal rating;
 
     @Column(name = "embedding", columnDefinition = "vector")
     private String embedding;
@@ -100,11 +101,11 @@ public class Book {
 		this.yearPublished = yearPublished;
 	}
 
-	public Double getRating() {
+	public BigDecimal getRating() {
 		return rating;
 	}
 
-	public void setRating(Double rating) {
+	public void setRating(BigDecimal rating) {
 		this.rating = rating;
 	}
 
