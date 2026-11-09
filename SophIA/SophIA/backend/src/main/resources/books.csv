@@ -1,0 +1,61 @@
+book_id,title,authors,original_publication_year,average_rating,pages,genres,description
+1,Dom Casmurro,Machado de Assis,1899,4.1,256,"Romance, Clássico Brasileiro","Bentinho relembra a juventude e o amor por Capitu, enquanto a dúvida sobre uma possível traição corrói sua memória. Um dos maiores clássicos da literatura brasileira."
+2,Memórias Póstumas de Brás Cubas,Machado de Assis,1881,4.1,208,"Romance, Clássico Brasileiro","Um defunto autor narra, com ironia e humor, as memórias de sua vida vazia e privilegiada no Brasil imperial."
+3,O Cortiço,Aluísio Azevedo,1890,3.9,304,"Romance, Naturalismo, Clássico Brasileiro","A vida fervilhante de um cortiço no Rio de Janeiro expõe a miséria, a ambição e as tensões sociais do Brasil do século XIX."
+4,Capitães da Areia,Jorge Amado,1937,4.2,280,"Romance, Clássico Brasileiro","Um grupo de meninos abandonados vive de pequenos furtos nas ruas e praias de Salvador, sonhando com liberdade e afeto."
+5,Vidas Secas,Graciliano Ramos,1938,4.0,176,"Romance, Clássico Brasileiro","Uma família de retirantes luta contra a seca e a miséria no sertão nordestino, em uma narrativa seca e comovente."
+6,Grande Sertão: Veredas,João Guimarães Rosa,1956,4.2,624,"Romance, Clássico Brasileiro","O jagunço Riobaldo narra sua travessia pelo sertão, o amor por Diadorim e um possível pacto com o diabo, em linguagem inventiva."
+7,A Hora da Estrela,Clarice Lispector,1977,4.0,96,"Romance, Clássico Brasileiro","A história de Macabéa, uma jovem nordestina pobre e ingênua no Rio de Janeiro, explora solidão, pobreza e existência."
+8,O Alquimista,Paulo Coelho,1988,3.9,208,"Ficção, Aventura, Autoajuda",O pastor Santiago cruza o deserto em busca de um tesouro e descobre que o verdadeiro caminho é seguir a sua Lenda Pessoal.
+9,Cidade de Deus,Paulo Lins,1997,4.2,408,"Romance, Clássico Brasileiro","A violência e o crescimento do tráfico em uma favela do Rio são narrados ao longo de décadas, com crueza e vigor."
+10,O Senhor dos Anéis,J.R.R. Tolkien,1954,4.5,1178,"Fantasia, Aventura, Épico",Frodo e a Sociedade do Anel partem para destruir o Um Anel e derrotar o senhor das trevas Sauron na Terra-média.
+11,O Hobbit,J.R.R. Tolkien,1937,4.3,310,"Fantasia, Aventura",O pacato hobbit Bilbo embarca com anões e o mago Gandalf numa jornada para recuperar um tesouro guardado por um dragão.
+12,Harry Potter e a Pedra Filosofal,J.K. Rowling,1997,4.5,264,"Fantasia, Aventura, Juvenil","Um menino órfão descobre que é bruxo e ingressa em Hogwarts, onde faz amigos e enfrenta o mago que matou seus pais."
+13,A Guerra dos Tronos,George R.R. Martin,1996,4.4,694,"Fantasia, Épico, Aventura","Famílias nobres disputam o trono dos Sete Reinos em meio a traições, batalhas e uma ameaça sobrenatural que avança do Norte."
+14,O Nome do Vento,Patrick Rothfuss,2007,4.5,662,"Fantasia, Aventura","Kvothe, um lendário mago e músico, narra sua própria história, da infância trágica à busca por conhecimento e vingança."
+15,"As Crônicas de Nárnia: O Leão, a Feiticeira e o Guarda-Roupa",C.S. Lewis,1950,4.2,208,"Fantasia, Aventura, Juvenil","Quatro irmãos atravessam um guarda-roupa e chegam a Nárnia, um mundo mágico onde ajudam o leão Aslan a derrotar a Feiticeira Branca."
+16,Percy Jackson e o Ladrão de Raios,Rick Riordan,2005,4.3,377,"Fantasia, Aventura, Juvenil",Percy descobre que é filho de um deus grego e parte numa missão para impedir uma guerra entre os deuses do Olimpo.
+17,Duna,Frank Herbert,1965,4.3,688,"Ficção Científica, Aventura, Épico","No planeta desértico Arrakis, o jovem Paul Atreides se torna peça central numa disputa por poder, religião e pela especiaria mais valiosa do universo."
+18,1984,George Orwell,1949,4.2,328,"Ficção Científica, Distopia, Clássico","Num regime totalitário que tudo vigia, Winston Smith tenta resistir ao Grande Irmão e descobre o preço da liberdade de pensar."
+19,Admirável Mundo Novo,Aldous Huxley,1932,4.0,288,"Ficção Científica, Distopia, Clássico","Numa sociedade futura condicionada pelo prazer e pela engenharia genética, a estabilidade é mantida ao custo da individualidade."
+20,Fahrenheit 451,Ray Bradbury,1953,4.0,256,"Ficção Científica, Distopia, Clássico","Num futuro em que livros são proibidos e queimados, um bombeiro começa a questionar o mundo que ajuda a destruir."
+21,O Guia do Mochileiro das Galáxias,Douglas Adams,1979,4.2,216,"Ficção Científica, Humor, Aventura","Após a Terra ser destruída, Arthur Dent viaja pela galáxia em aventuras absurdas e hilárias em busca do sentido de tudo."
+22,Fundação,Isaac Asimov,1951,4.2,244,"Ficção Científica, Épico",Um matemático prevê a queda de um império galáctico e cria uma fundação para preservar o conhecimento e encurtar a era das trevas.
+23,"Eu, Robô",Isaac Asimov,1950,4.2,224,"Ficção Científica, Contos",Contos interligados exploram as Três Leis da Robótica e os dilemas morais do convívio entre humanos e máquinas inteligentes.
+24,Neuromancer,William Gibson,1984,4.0,271,"Ficção Científica, Cyberpunk",Um hacker decadente recebe uma última chance e mergulha no ciberespaço numa trama de inteligências artificiais e megacorporações.
+25,Jogos Vorazes,Suzanne Collins,2008,4.3,374,"Ficção Científica, Distopia, Juvenil",Katniss se voluntaria para um reality show mortal transmitido a uma nação opressora e se torna símbolo de rebelião.
+26,O Código Da Vinci,Dan Brown,2003,3.9,489,"Suspense, Mistério, Thriller",Um simbologista investiga um assassinato no Louvre e segue pistas que escondem um segredo capaz de abalar a história do cristianismo.
+27,Assassinato no Expresso do Oriente,Agatha Christie,1934,4.2,256,"Mistério, Suspense, Policial","O detetive Hercule Poirot investiga um assassinato a bordo de um trem isolado pela neve, onde todos os passageiros são suspeitos."
+28,Garota Exemplar,Gillian Flynn,2012,4.1,432,"Suspense, Thriller, Mistério","Quando Amy desaparece no aniversário de casamento, o marido vira principal suspeito numa trama cheia de reviravoltas perturbadoras."
+29,O Silêncio dos Inocentes,Thomas Harris,1988,4.2,352,"Suspense, Thriller, Terror",A agente Clarice Starling recorre ao brilhante e assassino Hannibal Lecter para capturar um serial killer à solta.
+30,A Garota no Trem,Paula Hawkins,2015,3.9,336,"Suspense, Thriller, Mistério",Uma mulher que observa a rotina de um casal pela janela do trem se vê envolvida no desaparecimento da esposa.
+31,Drácula,Bram Stoker,1897,4.0,418,"Terror, Gótico, Clássico","O conde Drácula deixa a Transilvânia rumo à Inglaterra para espalhar seu mal, enfrentando um grupo decidido a detê-lo."
+32,Frankenstein,Mary Shelley,1818,3.8,280,"Terror, Ficção Científica, Clássico",O cientista Victor Frankenstein cria uma criatura viva e é perseguido pelas consequências trágicas de brincar de deus.
+33,It: A Coisa,Stephen King,1986,4.2,1138,"Terror, Suspense","Um grupo de amigos enfrenta, na infância e na vida adulta, uma entidade maligna que assombra sua cidade na forma de um palhaço."
+34,O Iluminado,Stephen King,1977,4.2,447,"Terror, Suspense","Isolada num hotel durante o inverno, uma família é dominada por forças sobrenaturais que enlouquecem o pai aos poucos."
+35,Orgulho e Preconceito,Jane Austen,1813,4.3,279,"Romance, Clássico",Elizabeth Bennet e o orgulhoso Sr. Darcy superam mal-entendidos e preconceitos num dos romances mais amados da literatura.
+36,Cem Anos de Solidão,Gabriel García Márquez,1967,4.1,417,"Romance, Realismo Mágico, Clássico",A saga da família Buendía na cidade mítica de Macondo mistura o cotidiano e o fantástico ao longo de gerações.
+37,O Pequeno Príncipe,Antoine de Saint-Exupéry,1943,4.3,96,"Fábula, Infantil, Clássico","Um piloto encontra no deserto um principezinho de outro planeta, cujas reflexões revelam o essencial que os olhos não veem."
+38,O Grande Gatsby,F. Scott Fitzgerald,1925,3.9,180,"Romance, Clássico","Nos anos 1920, o milionário Gatsby persegue um amor idealizado em meio ao luxo e à decadência do sonho americano."
+39,Crime e Castigo,Fiódor Dostoiévski,1866,4.2,671,"Romance, Clássico, Psicológico","Um estudante pobre comete um assassinato e é consumido pela culpa, numa profunda investigação da mente e da moral."
+40,Os Miseráveis,Victor Hugo,1862,4.2,1463,"Romance, Clássico, Histórico","Jean Valjean busca redenção enquanto é perseguido pelo inspetor Javert, num vasto painel da França do século XIX."
+41,O Conde de Monte Cristo,Alexandre Dumas,1844,4.3,1276,"Aventura, Clássico, Histórico","Traído e preso injustamente, Edmond Dantès escapa, encontra uma fortuna e arquiteta uma elaborada vingança."
+42,Dom Quixote,Miguel de Cervantes,1605,3.9,1072,"Aventura, Clássico, Humor",Um fidalgo enlouquecido pela leitura de romances de cavalaria sai pelo mundo como cavaleiro andante ao lado de Sancho Pança.
+43,Moby Dick,Herman Melville,1851,3.5,635,"Aventura, Clássico","O capitão Ahab persegue obsessivamente a baleia branca que lhe arrancou a perna, arrastando sua tripulação ao abismo."
+44,Guerra e Paz,Liev Tolstói,1869,4.1,1225,"Romance, Clássico, Histórico","Famílias aristocráticas russas vivem o amor e a guerra durante as invasões napoleônicas, num épico sobre o destino humano."
+45,Anna Karenina,Liev Tolstói,1877,4.1,864,"Romance, Clássico","O amor proibido de Anna por um oficial a leva à ruína social, em paralelo à busca de sentido de outros personagens."
+46,O Apanhador no Campo de Centeio,J.D. Salinger,1951,3.8,277,"Romance, Clássico",O adolescente Holden Caulfield vaga por Nova York questionando a hipocrisia do mundo adulto após ser expulso do colégio.
+47,O Retrato de Dorian Gray,Oscar Wilde,1890,4.1,254,"Romance, Gótico, Clássico",Um jovem permanece eternamente belo enquanto seu retrato envelhece e registra cada um de seus pecados.
+48,Como Água para Chocolate,Laura Esquivel,1989,4.0,246,"Romance, Realismo Mágico","Proibida de casar com seu amor, Tita expressa paixões e dores através da cozinha, com receitas que enfeitiçam quem as prova."
+49,A Culpa é das Estrelas,John Green,2012,4.2,313,"Romance, Juvenil, Drama","Dois adolescentes com câncer se apaixonam e vivem intensamente, encarando o amor e a mortalidade com humor e ternura."
+50,Sapiens: Uma Breve História da Humanidade,Yuval Noah Harari,2011,4.4,464,"Não Ficção, História, Ciência","Uma ampla narrativa sobre como o Homo sapiens dominou o planeta, das revoluções cognitiva e agrícola à era científica."
+51,Breve História do Tempo,Stephen Hawking,1988,4.2,256,"Não Ficção, Ciência, Divulgação","Hawking explica em linguagem acessível o Big Bang, os buracos negros e a natureza do tempo e do universo."
+52,O Diário de Anne Frank,Anne Frank,1947,4.2,283,"Não Ficção, Biografia, Histórico","O diário real de uma adolescente judia escondida dos nazistas registra medo, esperança e maturidade durante a guerra."
+53,Rápido e Devagar: Duas Formas de Pensar,Daniel Kahneman,2011,4.2,499,"Não Ficção, Psicologia, Ciência",O Nobel de Economia revela como dois sistemas mentais guiam nossas decisões e por que tantas vezes nos enganamos.
+54,A Revolução dos Bichos,George Orwell,1945,4.0,112,"Fábula, Distopia, Clássico","Animais de uma fazenda se rebelam contra os humanos, mas a revolução é corrompida pelo poder numa sátira ao totalitarismo."
+55,Laranja Mecânica,Anthony Burgess,1962,3.9,213,"Ficção Científica, Distopia","Num futuro violento, o jovem Alex é submetido a um experimento estatal que questiona livre-arbítrio e redenção."
+56,O Conto da Aia,Margaret Atwood,1985,4.1,311,"Ficção Científica, Distopia","Numa teocracia que reduz mulheres à função de procriar, Offred luta para preservar a memória e a esperança de liberdade."
+57,O Médico e o Monstro,Robert Louis Stevenson,1886,3.8,144,"Terror, Gótico, Clássico","Um médico respeitável cria uma poção que libera seu lado sombrio, o cruel Sr. Hyde, em um clássico sobre a dualidade humana."
+58,A Metamorfose,Franz Kafka,1915,3.9,96,"Romance, Clássico, Existencial",Gregor Samsa acorda transformado num inseto gigante e enfrenta o horror e o abandono da própria família.
+59,Matilda,Roald Dahl,1988,4.3,240,"Infantil, Fantasia, Humor",Uma menina genial e amante dos livros usa sua esperteza e poderes para enfrentar adultos cruéis e a temível diretora.
+60,A Menina que Roubava Livros,Markus Zusak,2005,4.4,552,"Romance, Histórico, Drama","Narrada pela Morte, a história de Liesel mostra como os livros e as palavras a salvam na Alemanha nazista."
