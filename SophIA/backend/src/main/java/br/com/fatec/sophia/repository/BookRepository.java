@@ -50,4 +50,8 @@ List<Book> hybridSearch(
 
     //Evita duplicidade de livros com o mesmo título, garantindo que cada título seja único no banco de dados.
     boolean existsByTitle(String title);
+
+    // Apenas os títulos, usados na extração determinística de filtros (casar nome do livro).
+    @Query("SELECT b.title FROM Book b")
+    List<String> findAllTitles();
 }

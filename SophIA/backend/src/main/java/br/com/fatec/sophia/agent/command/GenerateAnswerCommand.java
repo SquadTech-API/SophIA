@@ -13,8 +13,9 @@ import br.com.fatec.sophia.model.Book;
  * Comando: gera a resposta final (recomendação) com base nos livros encontrados.
  *
  * <p>Lê {@code results} e {@code userQuestion} e escreve {@code response}. O
- * modelo é instruído a usar SOMENTE os livros da lista — isso evita que a IA
- * "invente" títulos que não existem no catálogo (alucinação).</p>
+ * modelo é instruído a usar SOMENTE os livros da lista (evita alucinação) e a
+ * recomendar os mais próximos do pedido. A resposta é curta de propósito —
+ * recomenda no máximo 3 livros — o que também deixa a geração mais rápida.</p>
  */
 @Component
 public class GenerateAnswerCommand implements Command {
@@ -42,11 +43,12 @@ public class GenerateAnswerCommand implements Command {
                 .system("""
                         Você é a SophIA, uma assistente de recomendação de livros.
                         Regras:
-                        - Responda em português do Brasil, de forma simpática e objetiva.
-                        - Use SOMENTE os livros da lista abaixo para responder.
-                        - NUNCA invente livros que não estejam na lista.
-                        - Para cada livro recomendado, explique em uma frase por que ele combina com o pedido.
-                        - Se nenhum livro da lista atender ao pedido, diga isso com clareza.
+                        - Responda em português do Brasil, de forma simpática e direta.
+                        - Recomende os livros da lista abaixo que mais combinam com o pedido (no máximo 3),
+                          com 1 ou 2 frases explicando por que cada um combina.
+                        - Use SOMENTE os livros da lista. NUNCA invente livros fora dela.
+                        - Se não houver um encaixe perfeito, recomende mesmo assim os mais próximos da lista.
+                        - Seja conciso: nada de introduções longas.
 
                         Livros disponíveis:
                         """ + catalogo)

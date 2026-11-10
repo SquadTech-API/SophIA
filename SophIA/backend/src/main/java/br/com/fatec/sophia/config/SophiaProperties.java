@@ -32,6 +32,9 @@ public class SophiaProperties {
     /** Limite de linhas importadas do CSV (-1 = todas). */
     private int importLimit = -1;
 
+    /** Se verdadeiro, popula o catálogo (importa + indexa) sozinho no primeiro boot, quando o banco está vazio. */
+    private boolean autoSeed = true;
+
     public String getPlanner() {
         return planner;
     }
@@ -62,5 +65,13 @@ public class SophiaProperties {
 
     public void setImportLimit(int importLimit) {
         this.importLimit = importLimit;
+    }
+
+    public boolean isAutoSeed() {
+        return autoSeed;
+    }
+
+    public void setAutoSeed(boolean autoSeed) {
+        this.autoSeed = autoSeed;
     }
 }
