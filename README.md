@@ -1,6 +1,6 @@
 <!-- Banner -->
 <p align="center">
-  <img src="docs/images/banner.png" alt="SophIA" width="100%">
+  <img src="SophIA/docs/images/banner.png" alt="SophIA" width="100%">
 </p>
 
 <p align="center">
@@ -50,7 +50,7 @@ Toda a inteligência roda **localmente** via **Ollama** — nenhum dado é envia
 ## 🎬 Demonstração
 
 <p align="center">
-  <img src="docs/images/mockup-chat.png" alt="Interface da SophIA" width="78%">
+  <img src="SophIA/docs/images/mockup-chat.png" alt="Interface da SophIA" width="78%">
 </p>
 
 > No topo há um seletor de **Estratégia** que troca, em tempo real, o "jeito de pensar" do agente (demonstração ao vivo do padrão *Strategy*).
@@ -81,13 +81,13 @@ Cada tecnologia foi escolhida por um motivo específico dentro do projeto.
 A SophIA não responde de uma vez: ela trabalha como um **agente**, em um ciclo de **planejar → executar → observar**, repetindo até ter a resposta. Uma máquina de estados coordena esse ciclo, e os outros padrões se encaixam em volta dela.
 
 <p align="center">
-  <img src="docs/images/arquitetura.png" alt="Arquitetura do agente" width="72%">
+  <img src="SophIA/docs/images/arquitetura.png" alt="Arquitetura do agente" width="72%">
 </p>
 
 O ciclo da máquina de estados, em detalhe:
 
 <p align="center">
-  <img src="docs/images/ciclo-estados.png" alt="Ciclo de estados" width="88%">
+  <img src="SophIA/docs/images/ciclo-estados.png" alt="Ciclo de estados" width="88%">
 </p>
 
 ---
@@ -122,49 +122,49 @@ O projeto usa **7 padrões de projeto**. Para cada um: o que é, por que foi apl
 
 <br>
 
-### 1. State Machine &nbsp;·&nbsp; *Leonardo*
+### 1. State Machine &nbsp;·&nbsp;
 
 - **O que é:** padrão comportamental em que um objeto muda de comportamento conforme seu estado interno. Cada estado é uma classe que sabe processar o contexto e dizer qual é o próximo estado.
 - **Por que foi aplicado:** um agente executa um fluxo de várias etapas que pode ramificar (achou / não achou resultado) e repetir. Modelar isso como uma máquina de estados torna o fluxo **explícito e controlado**, em vez de um método gigante cheio de `if`.
 - **Como foi aplicado:** o enum `AgentState` (`INIT, PLANNING, EXECUTING, OBSERVING, COMPLETED, FAILED`), a classe `Agent` (que roda o laço), a interface `StateHandler` e um handler por estado (`InitStateHandler`, `PlanningStateHandler`, `ExecutingStateHandler`, `ObservingStateHandler`). Cada handler recebe o `AgentContext`, faz seu trabalho e retorna o próximo `AgentState`; o laço roda até um estado terminal.
 - **O que faz no projeto:** é a **espinha dorsal** do agente — coordena *quando* cada etapa acontece, do início da requisição até a resposta final.
 
-### 2. Command &nbsp;·&nbsp; *Maria Eduarda*
+### 2. Command &nbsp;·&nbsp; 
 
 - **O que é:** encapsula uma ação como um objeto com uma interface comum, para ser executada sem que o chamador saiba o que ela faz por dentro.
 - **Por que foi aplicado:** o agente tem várias "ferramentas". Tratá-las como comandos uniformes deixa o executor simples e permite montar um **plano** como uma lista de passos.
 - **Como foi aplicado:** a interface `Command` (`name()` + `execute(ctx)`), o `CommandRegistry` (que indexa todos os comandos pelo nome, recebendo a lista pronta por injeção de dependência) e os comandos concretos. O `ExecutingStateHandler` apenas pega o nome do próximo passo e chama `commandRegistry.get(nome).execute(ctx)`.
 - **O que faz no projeto:** são as ações concretas: `extract_filters`, `embed_query`, `search_books` e `generate_answer`.
 
-### 3. Strategy &nbsp;·&nbsp; *Natanael*
+### 3. Strategy &nbsp;·&nbsp; 
 
 - **O que é:** uma família de algoritmos intercambiáveis por trás de uma interface comum.
 - **Por que foi aplicado:** existem vários jeitos de o agente **raciocinar** sobre os passos. O Strategy permite trocar a estratégia sem tocar na máquina de estados — inclusive **em tempo real**, pelo seletor do front.
 - **Como foi aplicado:** a interface `Planner` (`plan(ctx)`), o `PlannerRegistry` e as estratégias concretas. O `PlanningStateHandler` resolve qual planner usar (por requisição) e pede a ele o próximo passo.
 - **O que faz no projeto:** oferece 3 modos de decisão — `PlanThenExecute` (planeja tudo de uma vez), `ReAct` (decide um passo por vez) e `HumanInTheLoop` (pede mais detalhes quando a pergunta é vaga).
 
-### 4. Composite &nbsp;·&nbsp; *Natanael*
+### 4. Composite &nbsp;·&nbsp; 
 
 - **O que é:** padrão estrutural que monta objetos em árvore e trata o grupo (composto) igual a um item único (folha), pela mesma interface.
 - **Por que foi aplicado:** a etapa de recuperação é, na verdade, três comandos em sequência. Agrupá-los em um único comando mantém o executor simples e demonstra o "todo tratado como parte".
 - **Como foi aplicado:** `CompositeCommand` implementa `Command` e contém uma `List<Command>` (os filhos); seu `execute()` roda cada filho. O `CompositePlanner` usa esse comando composto, chamado `retrieve`.
 - **O que faz no projeto:** o comando `retrieve` agrupa *extrair filtros + gerar embedding + buscar* e é executado como se fosse um comando só — quem chama `execute()` não sabe que, por dentro, são três.
 
-### 5. Chain of Responsibility &nbsp;·&nbsp; *Jhonatan*
+### 5. Chain of Responsibility &nbsp;·&nbsp; 
 
 - **O que é:** uma corrente de objetos processa a requisição; cada elo trata e passa adiante, ou interrompe a corrente.
 - **Por que foi aplicado:** preocupações como validar a entrada e ajustar a saída não deveriam poluir o núcleo do agente. A corrente as isola em "camadas" em volta dele.
 - **Como foi aplicado:** a interface `Advisor`, a `AdvisorChain` (percorre os elos; quando acabam, executa o próprio agente) e os advisors concretos.
 - **O que faz no projeto:** o `InputGuardAdvisor` valida e normaliza a pergunta antes do agente (e **interrompe** se for inválida); o `ResponsePolishAdvisor` ajusta a resposta depois que o agente termina.
 
-### 6. Observer &nbsp;·&nbsp; *Jhonatan*
+### 6. Observer &nbsp;·&nbsp; 
 
 - **O que é:** observadores se inscrevem em um sujeito e são notificados quando algo acontece, sem acoplamento.
 - **Por que foi aplicado:** monitorar o agente (logs, métricas) não deveria estar misturado à sua lógica. O Observer separa isso e permite adicionar monitoramento novo sem mexer no núcleo.
 - **Como foi aplicado:** a interface `AgentObserver` (`onTransition(from, to, ctx)`); o `Agent` é o **sujeito** e notifica todos os observers a cada transição de estado.
 - **O que faz no projeto:** o `LoggingObserver` registra cada transição e comando executado; o `MetricsObserver` coleta métricas (execuções, transições, falhas).
 
-### 7. Dependency Injection &nbsp;·&nbsp; *Jhonatan*
+### 7. Dependency Injection &nbsp;·&nbsp;
 
 - **O que é:** o framework cria os objetos (beans) e os entrega prontos, em vez de cada classe instanciar suas dependências com `new`.
 - **Por que foi aplicado:** mantém tudo **desacoplado** e **extensível**; o truque-chave é injetar uma **lista** de beans, o que faz o sistema se montar sozinho.
