@@ -53,7 +53,7 @@ public class SophiaApiClient {
 
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(baseUrl + "/api/chat"))
-                .timeout(Duration.ofMinutes(3)) // modelos locais podem demorar
+                .timeout(Duration.ofMinutes(10)) // modelos locais na CPU podem demorar em perguntas complexas
                 .header("Content-Type", "application/json")
                 .POST(HttpRequest.BodyPublishers.ofString(
                         mapper.writeValueAsString(payload), StandardCharsets.UTF_8))

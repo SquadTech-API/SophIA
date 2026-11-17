@@ -36,19 +36,17 @@ public class GenerateAnswerCommand implements Command {
         List<Book> results = ctx.getResults();
 
         String catalogo = (results == null ? List.<Book>of() : results).stream()
-                .map(b -> "- " + b.getTitle() + ": " + b.getDescription())
+                .map(b -> "- " + b.getTitle() + ": " + resumo(b.getDescription()))
                 .collect(Collectors.joining("\n"));
 
         String response = chatClient.prompt()
                 .system("""
-                        Você é a SophIA, uma assistente de recomendação de livros.
+                        Você é a SophIA, uma assistente de recomendação de livros. Seja BREVE.
                         Regras:
-                        - Responda em português do Brasil, de forma simpática e direta.
-                        - Recomende os livros da lista abaixo que mais combinam com o pedido (no máximo 3),
-                          com 1 ou 2 frases explicando por que cada um combina.
-                        - Use SOMENTE os livros da lista. NUNCA invente livros fora dela.
-                        - Se não houver um encaixe perfeito, recomende mesmo assim os mais próximos da lista.
-                        - Seja conciso: nada de introduções longas.
+                        - Responda em português do Brasil.
+                        - Recomende no máximo 3 livros da lista, com UMA frase curta cada dizendo por que combina.
+                        - Comece direto pela primeira recomendação, SEM introdução e SEM conclusão.
+                        - Use SOMENTE os livros da lista; nunca invente livros fora dela.
 
                         Livros disponíveis:
                         """ + catalogo)
@@ -57,5 +55,21 @@ public class GenerateAnswerCommand implements Command {
                 .content();
 
         ctx.setResponse(response);
+    }
+
+    /** Encurta a descrição para reduzir o tamanho do prompt (geração mais rápida). */
+    private String resumo(String descricao) {
+        if (descricao == null) {
+            return "";
+        }
+        String d = descricao.trim();
+        if (d.length() <= 180) {
+            return d;
+        }
+        int corte = d.indexOf(". ", 110);
+        if (corte > 0 && corte < 180) {
+            return d.substring(0, corte + 1);
+        }
+        return d.substring(0, 180) + "...";
     }
 }

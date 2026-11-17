@@ -41,7 +41,8 @@ public class ChatController {
     @FXML
     public void initialize() {
         // Estratégias (planners) disponíveis — demonstra o padrão Strategy ao vivo.
-        plannerCombo.getItems().setAll("Plan-then-Execute", "ReAct", "Human-in-the-Loop");
+        // "Composite" usa o comando composto (padrão Composite) na etapa de busca.
+        plannerCombo.getItems().setAll("Plan-then-Execute", "ReAct", "Human-in-the-Loop", "Composite");
         plannerCombo.setValue("Plan-then-Execute");
 
         Platform.runLater(messageField::requestFocus);
